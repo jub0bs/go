@@ -528,8 +528,5 @@ func parseCookieValue(raw string, allowDoubleQuote bool) (value string, quoted, 
 }
 
 func isCookieNameValid(raw string) bool {
-	if raw == "" {
-		return false
-	}
-	return strings.IndexFunc(raw, isNotToken) < 0
+	return isToken(raw)
 }
